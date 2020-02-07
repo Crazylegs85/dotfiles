@@ -32,9 +32,14 @@ set termguicolors
 set background=dark
 colorscheme default
 let g:airline_theme='dark'
-set number relativenumber
+" Enable the list of buffers.
+let g:airline#extensions#tabline#enabled =1
+" Show just the filename.
+let g:airline#extensions#tabline#fnamemod = ':t'
+set number
 set encoding=utf-8
 set textwidth=80
+autocmd BufWritePre * %s/\s\+$//e
 
 " Window movements in terminal, insert and normal mode.
 tnoremap <A-[> <C-\><C-N>
